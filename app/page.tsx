@@ -1,4 +1,4 @@
-import Paragraph from "./components/Paragraph";
+import Paragraph from "@/ui/Paragraph";
 
 export default function Home() {
   return (

@@ -1,6 +1,6 @@
 import { HTMLAttributes, forwardRef } from "react";
 import { VariantProps, cva } from "class-variance-authority";
-import { cn } from "../lib/utils";
+import { cn } from "../../lib/utils";
 
 // This makes the paragraph component reusable using the class variance authority libary (basically defines which styles to apply to the component depending on the props passed in)
 const paragraphVariants = cva(
