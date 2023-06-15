@@ -40,7 +40,7 @@ const Paragraph = forwardRef<HTMLParagraphElement, ParagraphProps>(
       <p
         ref={ref} // this is the link to the DOM node (parent?)
         {...props}
-        className={cn([paragraphVariants({ size, className })])} // Dynamic tailwind classname. Uses a utility function to take the size and classnames passed in and make them valid TW styles.
+        className={cn(paragraphVariants({ size, className }))} // Dynamic tailwind classname. Uses a utility function to take the size and classnames passed in and make them valid TW styles.
       >
         {children}
       </p>
@@ -48,6 +48,6 @@ const Paragraph = forwardRef<HTMLParagraphElement, ParagraphProps>(
   }
 );
 
-Paragraph.displayName = "Paragraph";
+Paragraph.displayName = "Paragraph"; // for debugging
 
 export default Paragraph;
