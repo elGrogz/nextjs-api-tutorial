@@ -24,17 +24,23 @@ const paragraphVariants = cva(
 
 // define the interface for the props that will be passed in
 interface ParagraphProps
-  extends HTMLAttributes<HTMLParagraphElement>, // HTMLAttributes is a react type that takes a generic (like a function that takes types instead of parameters. It takes an HTMLParagraph type which means any component that uses the Paragraph component can see the props that are available to an HTML paragraph
+  extends HTMLAttributes<HTMLParagraphElement>, // HTMLAttributes is a react type that takes a generic (like a function that takes types instead of parameters. It takes an HTMLParagraph type which means any component that uses the Paragraph component can see the props that are available to an HTMLParagraph
     VariantProps<typeof paragraphVariants> {} //
 
+// forward ref allows us to pass a link to a DOM node
+// It takes two generics:
+// 1. The type of the element that it will render (HTMLParagraphElement)
+// 2. The type of the props that we will pass to the component (our own paragraph props)
 const Paragraph = forwardRef<HTMLParagraphElement, ParagraphProps>(
   // everything in the props (first) argument of the function component will be of type HTMLParagraphElement and Paragraph Props
   ({ className, size, children, ...props }, ref) => {
+    // the ref is optional and allows access to the referenced node
+    //destructured props className, size and children. Everything else is availabe as props
     return (
       <p
-        ref={ref}
+        ref={ref} // this is the link to the DOM node (parent?)
         {...props}
-        className={cn([paragraphVariants({ size, className })])}
+        className={cn([paragraphVariants({ size, className })])} // Dynamic tailwind classname. Uses a utility function to take the size and classnames passed in and make them valid TW styles.
       >
         {children}
       </p>
