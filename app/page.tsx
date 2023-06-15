@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Paragraph from "./components/Paragraph";
 
 export default function Home() {
