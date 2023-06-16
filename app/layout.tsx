@@ -1,6 +1,8 @@
 import "@/styles/globals.css";
 import { Inter } from "next/font/google";
 import { cn } from "@/lib/utils";
+import Providers from "@/components/Providers";
+import Navbar from "@/components/ui/Navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,7 +21,16 @@ export default function RootLayout({
       lang="en"
       className={cn("bg-white text-slate-900 antialiased", inter.className)}
     >
-      <body>{children}</body>
+      <body className="min-h-screen bg-slate-50 dark:bg-slate-900 antialiased">
+        <Providers>
+          {children}
+          <Navbar></Navbar>
+        </Providers>
+
+        {/* Allow for more height on mobile devices */}
+        {/* It creates an element of fixed height 40 and on medium and above screens it doesn't exist */}
+        <div className="h-40 md:hidden" />
+      </body>
     </html>
   );
 }

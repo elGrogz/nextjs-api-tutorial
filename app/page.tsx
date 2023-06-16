@@ -6,8 +6,8 @@ export default function Home() {
     <main
     // className="bg-red-500 flex min-h-screen flex-col items-center justify-between p-24"
     >
-      <LargeHeading size="lg">HELLLOO</LargeHeading>
-      <Paragraph size="default">What's up</Paragraph>
+      <LargeHeading size="lg"></LargeHeading>
+      <Paragraph size="default"></Paragraph>
     </main>
   );
 }
