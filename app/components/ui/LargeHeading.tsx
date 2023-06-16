@@ -5,6 +5,7 @@ import { cn } from "../../lib/utils";
 // This makes the paragraph component reusable using the class variance authority libary (basically defines which styles to apply to the component depending on the props passed in)
 const largeHeadingVariants = cva(
   "text-black dark:text-white text-center lg:text-left font-extrabold leading-tight tracking-right", // Tailwind styling that applies for everything in the component that implements paragraph variants
+  // leading tight - letters closer together
   {
     variants: {
       // the properties in variants are available as props for the parent components rendering this component

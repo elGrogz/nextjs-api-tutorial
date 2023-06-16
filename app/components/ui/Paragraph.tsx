@@ -11,8 +11,7 @@ const paragraphVariants = cva(
       // different variants we want for the paragraph
       size: {
         default: "text-base sm:text-lg", // text-base determines a tailwind font size (this is default)
-        sm: "text-sm sm:text-base",
-        blah: "text-sm bloo",
+        sm: "text-sm",
       },
     },
     defaultVariants: {
