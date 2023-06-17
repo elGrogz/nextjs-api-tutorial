@@ -32,8 +32,21 @@ const Navbar: FC<NavbarProps> = async ({}) => {
           <Link
             href="/documentation"
             className={buttonVariants({ variants: ["ghost"] })}
+          >
             Documentation
-          ></Link>
+          </Link>
+
+          {session ? (
+            <>
+              <Link
+                className={buttonVariants({ variants: "ghost" })}
+                href="/dashboard"
+              ></Link>
+              <SignOutButton />
+            </>
+          ) : (
+            <SignInButton />
+          )}
         </div>
       </div>
     </div>
