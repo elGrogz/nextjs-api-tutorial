@@ -1,7 +1,6 @@
 "use client"; // due to the useTheme hook
 
 import { useTheme } from "next-themes";
-import { FC } from "react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -11,9 +10,7 @@ import {
 import Button from "@/ui/Button";
 import { Sun, Moon, Laptop } from "lucide-react";
 
-interface ThemeToggleProps {}
-
-const ThemeToggle: FC<ThemeToggleProps> = ({}) => {
+export const ThemeToggle = () => {
   const { setTheme } = useTheme();
 
   return (
@@ -28,21 +25,19 @@ const ThemeToggle: FC<ThemeToggleProps> = ({}) => {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" forceMount>
-        <DropdownMenuItem>
-          <Sun className="mr-2 h-4 w-4" onClick={() => setTheme("light")} />
+        <DropdownMenuItem onClick={() => setTheme("light")}>
+          <Sun className="mr-2 h-4 w-4" />
           <span>Light</span>
         </DropdownMenuItem>
-        <DropdownMenuItem>
-          <Moon className="mr-2 h-4 w-4" onClick={() => setTheme("dark")} />
+        <DropdownMenuItem onClick={() => setTheme("dark")}>
+          <Moon className="mr-2 h-4 w-4" />
           <span>Dark</span>
         </DropdownMenuItem>
-        <DropdownMenuItem>
-          <Laptop className="mr-2 h-4 w-4" onClick={() => setTheme("system")} />
+        <DropdownMenuItem onClick={() => setTheme("system")}>
+          <Laptop className="mr-2 h-4 w-4" />
           <span>System</span>
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   );
 };
-
-export default ThemeToggle;

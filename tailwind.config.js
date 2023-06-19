@@ -1,3 +1,6 @@
+const { colors } = require("tailwindcss/colors");
+const { fontFamily } = require("tailwindcss/defaultTheme");
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ["class"],
@@ -14,7 +17,16 @@ module.exports = {
         "2x1": "1360px",
       },
     },
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ["var(--font-family)", ...fontFamily.sans],
+      },
+      colors: {
+        ...colors,
+        "light-gold": "#f5bc51",
+        "dark-gold": "#533519",
+      },
+    },
   },
-  plugins: [],
+  plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
 };

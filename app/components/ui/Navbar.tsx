@@ -3,7 +3,7 @@ import Link from "next/link";
 import { buttonVariants } from "@/ui/Button";
 import SignInButton from "@/components/SignInButton";
 import SignOutButton from "@/components/SignOutButton";
-import ThemeToggle from "@/components/ThemeToggle";
+import { ThemeToggle } from "@/ui/ThemeToggle";
 
 // async because it's a server side component
 const Navbar = async ({}) => {
@@ -43,7 +43,7 @@ const Navbar = async ({}) => {
                 className={buttonVariants({ variant: "ghost" })}
                 href="/dashboard"
               >
-                Link
+                Dashboard
               </Link>
               {/* You can't pass a function from a serverside function to a client side function, so we have to create separate sign in and sign out buttons and ahve the sign in/out functions defined in those components */}
               <SignOutButton />
