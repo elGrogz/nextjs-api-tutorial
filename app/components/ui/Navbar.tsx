@@ -1,9 +1,9 @@
 import { getServerSession } from "next-auth";
 import Link from "next/link";
-import { FC } from "react";
 import { buttonVariants } from "@/ui/Button";
 import SignInButton from "@/components/SignInButton";
 import SignOutButton from "@/components/SignOutButton";
+import ThemeToggle from "@/components/ThemeToggle";
 
 // async because it's a server side component
 const Navbar = async ({}) => {
@@ -24,10 +24,12 @@ const Navbar = async ({}) => {
           Hello
         </Link>
 
-        <div className="md:hidden">{/* <ThemeToggle /> */}</div>
+        <div className="md:hidden">
+          <ThemeToggle />
+        </div>
 
         <div className="hidden md:flex gap-4">
-          {/* <ThemeToggle /> */}
+          <ThemeToggle />
           <Link
             href="/documentation"
             className={buttonVariants({ variant: "ghost" })}
