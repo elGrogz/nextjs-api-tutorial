@@ -35,7 +35,11 @@ interface ButtonProps
   isLoading?: boolean;
 }
 
+// instead of using props and state, refs can be used by parent components to access child props
+// usually for managing focus, triggering animations
+// first type is the type of element, the second is for the props
 const Button: FC<ButtonProps> = forwardRef<HTMLButtonElement, ButtonProps>(
+  // spread the props in the first argument
   ({ className, children, variant, isLoading, size, ...props }, ref) => {
     return (
       <button
