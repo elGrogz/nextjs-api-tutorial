@@ -66,6 +66,7 @@ interface ToastOpts {
 }
 
 export function toast(opts: ToastOpts) {
+  // get the props we need from the opts parameter
   const { title, message, type = "default", duration = 3000 } = opts;
 
   return hotToast.custom(
