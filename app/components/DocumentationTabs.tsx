@@ -9,7 +9,10 @@ const DocumentationTabs: FC = () => {
         <TabsTrigger value="nodejs">NodeJS</TabsTrigger>
         <TabsTrigger value="python">Python</TabsTrigger>
       </TabsList>
-      <TabsContent value="nodejs">{/* <SimpleBar></SimpleBar> */}</TabsContent>
+      <TabsContent value="nodejs">
+        {/* <SimpleBar></SimpleBar> */}
+        <Code />
+      </TabsContent>
       <TabsContent value="python"></TabsContent>
     </Tabs>
   );
