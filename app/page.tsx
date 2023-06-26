@@ -6,6 +6,8 @@ import Paragraph from "@/ui/Paragraph";
 import Link from "next/link";
 import Image from "next/image";
 
+import "simplebar-react/dist/simplebar.min.css";
+
 export const metadata: Metadata = {
   title: "Similarity API | Home",
   description: "Similirity API to practice TS",
